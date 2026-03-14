@@ -17,18 +17,9 @@ const { title = "Just 1 J. Ray" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <img src="/knight.svg" alt="" id="bg-emblem" />
     <main>
       <slot />
     </main>
-    <script is:inline>
-      var el = document.getElementById('bg-emblem');
-      if (el) {
-        function show() { el.style.opacity = '0.1'; }
-        if (el.complete) show();
-        else el.onload = show;
-      }
-    </script>
   </body>
 </html>
 
@@ -51,11 +42,28 @@ const { title = "Just 1 J. Ray" } = Astro.props;
   }
 
   body {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
     padding: 1.5rem;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("/knight.svg") center center / 300px no-repeat;
+    opacity: 0;
+    pointer-events: none;
+    animation: fade-in 1.5s ease forwards;
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 0.1;
+    }
   }
 
   main {
@@ -75,15 +83,4 @@ const { title = "Just 1 J. Ray" } = Astro.props;
     opacity: 0.6;
   }
 
-  #bg-emblem {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1.5s ease;
-  }
 </style>
