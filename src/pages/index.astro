@@ -2,26 +2,26 @@
 import Base from "../layouts/Base.astro";
 import LinkGroup from "../components/LinkGroup.astro";
 
-const projects = [
-  { label: "project one", href: "#" },
-  { label: "project two", href: "#" },
-  { label: "project three", href: "#" },
+const socials = [
+  { label: "github", href: "https://github.com/just1jray" },
+  { label: "twitter/x", href: "https://x.com/just1jray" },
+  { label: "instagram", href: "https://instagram.com/just1jray" },
+  { label: "youtube", href: "https://youtube.com/@just1jray" },
 ];
 
-const socials = [
-  { label: "github", href: "https://github.com" },
-  { label: "twitter/x", href: "https://x.com" },
-  { label: "linkedin", href: "https://linkedin.com" },
+const projects = [
+  { label: "dots", href: "https://github.com/just1jray/dots" },
+  { label: "rAI3DS", href: "https://github.com/just1jray/rAI3DS" },
 ];
 ---
 
 <Base>
-  <h1>Just 1 // J. Ray</h1>
-  <p class="tagline">building things on the internet</p>
+  <h1>Just 1 J. Ray</h1>
+  <p class="tagline">human // nerd</p>
 
   <div class="links">
-    <LinkGroup title="projects" links={projects} />
     <LinkGroup title="socials" links={socials} />
+    <LinkGroup title="projects" links={projects} />
   </div>
 </Base>
 
