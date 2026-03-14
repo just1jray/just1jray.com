@@ -1,0 +1,46 @@
+---
+import Base from "../layouts/Base.astro";
+import LinkGroup from "../components/LinkGroup.astro";
+
+const projects = [
+  { label: "project one", href: "#" },
+  { label: "project two", href: "#" },
+  { label: "project three", href: "#" },
+];
+
+const socials = [
+  { label: "github", href: "https://github.com" },
+  { label: "twitter/x", href: "https://x.com" },
+  { label: "linkedin", href: "https://linkedin.com" },
+];
+---
+
+<Base>
+  <h1>Just 1 // J. Ray</h1>
+  <p class="tagline">building things on the internet</p>
+
+  <div class="links">
+    <LinkGroup title="projects" links={projects} />
+    <LinkGroup title="socials" links={socials} />
+  </div>
+</Base>
+
+<style>
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    color: #737373;
+    font-size: 0.875rem;
+    margin-bottom: 3rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

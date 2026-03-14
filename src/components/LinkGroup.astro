@@ -1,0 +1,49 @@
+---
+interface Props {
+  title?: string;
+  links: { label: string; href: string }[];
+}
+
+const { title, links } = Astro.props;
+---
+
+<section>
+  {title && <h2>{title}</h2>}
+  <ul>
+    {
+      links.map((link) => (
+        <li>
+          <a href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #737373;
+    text-transform: lowercase;
+    margin-bottom: 0.75rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+</style>
