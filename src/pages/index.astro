@@ -17,7 +17,7 @@ const projects = [
 
 <Base>
   <h1>Just 1 J. Ray</h1>
-  <p class="tagline">human // nerd</p>
+  <p class="tagline">human <span class="orange">//</span> nerd</p>
 
   <div class="links">
     <LinkGroup title="socials" links={socials} />
@@ -36,6 +36,10 @@ const projects = [
     color: #737373;
     font-size: 0.875rem;
     margin-bottom: 3rem;
+  }
+
+  .tagline .orange {
+    color: #f7931a;
   }
 
   .links {
